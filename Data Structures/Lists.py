@@ -60,6 +60,23 @@ numbers1=[2,5,5,8,7,4,6,1,51,4,3]
 print(remove_not_sorted(numbers))
 print(remove_not_sorted(numbers1))
 
+print('\nAlternative Solution QUESTION NO.3\n')
+def remove_not_sorted_mod(lst):
+    old_lst=lst[:]
+    i=1
+    while lst!=sorted(lst):
+        if lst[i]<max(lst[:i]):
+            del lst[i]
+            i-=1
+        else:
+            i+=1
+    return f'Your list: {old_lst}\nSorted list: {lst}\n'
+numbers=[1,2,4,3,5]
+numbers1=[2,5,5,8,7,4,6,1,51,4,3]
+print(remove_not_sorted_mod(numbers))
+print(remove_not_sorted_mod(numbers1))
+
+
 ''' Question No.4:  WRITE A FUNCTION THAT MOVES
 THE OUT OF ORDER ELEMENTS TO ANOTHER LIST.
 '''
